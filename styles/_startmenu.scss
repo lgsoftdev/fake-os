@@ -1,0 +1,67 @@
+.startmenu {
+    visibility: hidden;
+    width: 200px;
+    background-color: $background_taskbar;
+    color: white;
+    font-size: small;
+
+    @include grid_style(auto auto, auto, 0, 0, end);
+
+    &-power {
+        @include flex_style(column, space-between);
+        background-color: $background_taskbar;
+        height: 500px;
+        width: 50px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    &-apps {
+        @include flex_style(column, start);
+        background-color: $background_taskbar;
+        height: 500px;
+        width: 150px;
+        padding: $margin_small;
+        left: 50px;
+        scrollbar-width: thin;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__item {
+        @include grid_style(auto 1fr, auto);   
+
+        &:hover {
+            background-color: $background_hover;
+        }
+    }
+}
+
+.nonappitems-show {
+    width: 156px;
+    background-color: $background_power;
+}
+
+#btnStart {
+    font-weight: bold;
+}
+
+.date-display {
+    right: 55px;
+    bottom: $position_bottom;
+    position: fixed;
+    padding-right: $margin_xsmall;
+    padding-left: $margin_xsmall;
+    color: black;
+    background-color: lightgray;
+    font-size: smaller;
+    z-index: 4
+}
+
+.notification {
+    @extend .date-display;
+    right: 0;
+    z-index: 5;
+}
+
+

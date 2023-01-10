@@ -1,0 +1,302 @@
+.body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("/images/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.desktop-icons {
+  width: 80px;
+  margin: 20px;
+  font-size: small;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 40px;
+  align-items: center;
+}
+
+.btn-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.img {
+  margin: 10px;
+}
+
+.img--height-xsmall {
+  height: 20px;
+}
+
+.img--height-small {
+  height: 25px;
+}
+
+.img--height-medium {
+  height: 50px;
+}
+
+.img--margin-left-none {
+  margin-left: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dropdown--margin-small {
+  margin-left: 10px;
+}
+
+.border-none {
+  border: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* The Modal (background) */
+.fakeosmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place; If absolute is used, vertical and horizontal bars appear*/
+  z-index: 1; /* Sit on top */
+  left: 100px; /* Location of the box */
+  top: 60px;
+  width: 80%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.1); /* Black w/ opacity */
+  background-color: transparent; /* Fallback color */
+  /* Modal Content */
+}
+.fakeosmodal--medium {
+  width: 65%;
+}
+.fakeosmodal--small {
+  width: 380px;
+}
+.fakeosmodal__content {
+  z-index: 12;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.fakeosmodal__header {
+  padding: 2px 16px;
+  border-radius: 10px 10px 0 0;
+  background-color: darkseagreen;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.fakeosmodal__header--justify-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.fakeosmodal__body-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px 0px 30px 0px;
+}
+.fakeosmodal__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  border-top: 1px solid lightgrey;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.startmenu {
+  visibility: hidden;
+  width: 200px;
+  background-color: #372a21;
+  color: white;
+  font-size: small;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  align-items: end;
+}
+.startmenu-power {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #372a21;
+  height: 500px;
+  width: 50px;
+  position: absolute;
+  z-index: 2;
+}
+.startmenu-apps {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #372a21;
+  height: 500px;
+  width: 150px;
+  padding: 10px;
+  left: 50px;
+  scrollbar-width: thin;
+  position: absolute;
+  z-index: 1;
+}
+.startmenu__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  row-gap: 0;
+  align-items: center;
+}
+.startmenu__item:hover {
+  background-color: #454545;
+}
+
+.nonappitems-show {
+  width: 156px;
+  background-color: #3b2d23;
+}
+
+#btnStart {
+  font-weight: bold;
+}
+
+.date-display, .notification {
+  right: 55px;
+  bottom: 45px;
+  position: fixed;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: black;
+  background-color: lightgray;
+  font-size: smaller;
+  z-index: 4;
+}
+
+.notification {
+  right: 0;
+  z-index: 5;
+}
+
+.taskbar {
+  height: auto;
+  background-color: #372a21;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 3;
+}
+.taskbar__section-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.taskbar__section-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.taskbar__item-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.taskbar__item-row {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.taskbar__input--height {
+  height: 35px;
+}
+.taskbar__input--no-border {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-bottom-style: hidden;
+  border-left-style: hidden;
+}
+.taskbar__input--no-border:focus {
+  outline: none;
+}
+
+.datetime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  font-size: smaller;
+  margin-right: 10px;
+}

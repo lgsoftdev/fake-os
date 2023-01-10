@@ -1,0 +1,22 @@
+@mixin grid_style($cols: auto, $rows: auto, $col_gap: 0, $row_gap: 0, $align-items: center) {
+    display: grid;
+    grid-template-columns: $cols;
+    grid-template-rows: $rows;
+    column-gap: $col_gap;
+    row-gap: $row_gap;
+    align-items: $align-items;
+}
+
+@mixin flex_style($direction: row, $justify: center, $align: '', $wrap: '') {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+
+    @if $align != ''{
+        align-items: $align;
+    }
+
+    @if $wrap != ''{
+        flex-wrap: wrap;
+    }
+}

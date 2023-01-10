@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/index.js" defer></script>
+    <script type="module" src="./scripts/app-contacts.js" defer></script>
+    <script type="module" src="./scripts/app-postits.js" defer></script>
+    <title>Fake OS</title>
+</head>
+<body class="body">
+    <main>
+        <section class="desktop-icons">
+            <a id="desktop-Contact" class="btn-app" href="#">
+                <div><img class="img--height-medium" src="./images/icon_contacts_trans.png"></div>
+                <div><label>Contacts</label></div>
+            </a>  
+            <a id="desktop-Photo" class="btn-app" href="#">
+                <div><img class="img--height-medium" src="./images/icon_photos_trans.png"></div>
+                <div><label>Photos</label></div>
+            </a>  
+            <a id="desktop-PostIt" class="btn-app" href="#">
+                <div><img class="img--height-medium" src="./images/icon_notes_trans.png"></div>
+                <div><label>Post Its</label></div>
+            </a>  
+        </section>
+
+        <!-- The Modal CONTACTS -->
+        <div id="modalContact" class="fakeosmodal fakeosmodal--medium">
+            <div class="fakeosmodal__content">         
+                <!-- Modal Header -->
+                <div class="fakeosmodal__header">
+                    <div class="fakeosmodal__header--justify-start">
+                        <img class="img img--margin-left-none img--height-xsmall" src="./images/icon_contacts_trans.png">
+                        <h6>Contacts</h6>
+                    </div>
+                    <button name="modalContactClose" type="button" class="btn-close"></button>
+                    
+                </div>
+                <!-- Modal navigation -->
+                <nav class="flex-row">
+                    <div class="dropdown dropdown--margin-small">
+                        <button type="button" class="btn dropdown-toggle border-none" data-bs-toggle="dropdown">
+                            File
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a id="modalContactNew" class="dropdown-item" href="#">New Contact</a></li>
+                            <li><hr class="dropdown-divider"></hr></li>
+                            <li><a name="modalContactClose" class="dropdown-item btn-exit" href="#">Exit</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown dropdown--margin-small">
+                        <button type="button" class="btn dropdown-toggle border-none" data-bs-toggle="dropdown">
+                            View
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a id="modalContactView" class="dropdown-item" href="#">View All</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Modal body -->
+                <div id="modalContactBody" class="fakeosmodal__body-flex">                    
+                    <form id="modalContactForm">
+                        <div class="mb-3 mt-3">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input id="firstName" type="text" class="form-control" enabled minlength="1" maxlength="256" placeholder="Enter first name" name="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input id="lastName" type="text" class="form-control" minlength="0" maxlength="256" placeholder="Enter last name" name="lastName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input id="phoneNumber" type="text" class="form-control" minlength="0" maxlength="16" placeholder="Enter phone number" name="phoneNumber" pattern="[0-9]*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailAddress" class="form-label">Email Address *</label>
+                            <input id="emailAddress" type="email" class="form-control" minlength="1" maxlength="256" placeholder="Enter email address" name="emailAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="button" id="modalContactClear" class="btn btn-light" value="Clear">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                        <div id="modalContactMsg" class="mb-3">
+                            <label class="text-success">New contact was successfully added.</label>
+                        </div>
+                        
+                    </form>
+
+                    <table id="modalContactTable" class="mt-3 ms-3 table">
+                        <thead>
+                          <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                          </tr>
+                        </thead>
+                        <tbody id="modalContactTableBody">
+                        </tbody>
+                    </table>
+                </div>           
+            </div>
+        </div>
+
+        <!-- The Modal PHOTOS -->
+        <div id="modalPhoto" class="fakeosmodal fakeosmodal--small">
+            <div class="fakeosmodal__content">         
+                <!-- Modal Header -->
+                <div class="fakeosmodal__header bg-info">
+                    <div class="fakeosmodal__header--justify-start">
+                        <img class="img img--margin-left-none img--height-xsmall" src="./images/icon_photos_trans.png">
+                        <h6>Photos</h6>
+                    </div>
+                    
+                    <button name="modalPhotoClose" type="button" class="btn-close"></button>
+                </div>
+        
+                <!-- Modal body -->
+                <div id="modalPhotoBody" class="fakeosmodal__body-flex mt-4">
+                    <div></div>
+                   <!-- Carousel -->
+                    <div id="photoSlide" class="carousel slide" data-bs-ride="carousel">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                        </div>
+                        
+                        <!-- The slideshow/carousel -->
+                        <div class="carousel-inner">
+                        </div>
+                        
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#photoSlide" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#photoSlide" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                    <div></div>
+                </div>
+        
+                <!-- Modal footer -->
+                <div class="fakeosmodal__footer">
+                    <button name="modalPhotoClose" type="button" class="btn btn-light btn-exit">Close</button>
+                </div>            
+            </div>
+        </div>
+
+        <!-- The Modal POST ITS -->
+        <div id="modalPostIt" class="fakeosmodal">
+            <div class="fakeosmodal__content">         
+                <!-- Modal Header -->
+                <div class="fakeosmodal__header bg-dark">
+                    <div class="fakeosmodal__header--justify-start">
+                        <img class="img img--margin-left-none img--height-xsmall" src="./images/icon_notes_trans.png">
+                        <h6>Post Its</h6>
+                    </div>
+                    
+                    <button name="modalPostItClose" type="button" class="btn-close btn-close-white"></button>
+                </div>
+
+                <!-- Modal navigation -->
+                <nav class="flex-row">
+                    <div class="dropdown dropdown--margin-small">
+                        <button type="button" class="btn dropdown-toggle border-none" data-bs-toggle="dropdown">
+                            File
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a id="modalPostItNew" class="dropdown-item" href="#">New Post</a></li>
+                            <li><hr class="dropdown-divider"></hr></li>
+                            <li><a name="modalPostItClose" class="dropdown-item btn-exit" href="#">Exit</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown dropdown--margin-small">
+                        <button type="button" class="btn dropdown-toggle border-none" data-bs-toggle="dropdown">
+                            View
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a id="modalPostItView" class="dropdown-item" href="#">View All</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        
+                <!-- Modal body -->
+                <div id="modalPostItBody" class="fakeosmodal__body-flex">
+                    <form id="modalPostItForm">
+                        <div class="mb-3 mt-3">
+                            <label for="post">Post</label>
+                            <textarea class="form-control" rows="5" cols="50" id="post" name="text" maxlength="256" placeholder="Enter post" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input id="modalPostItClear" type="button" class="btn btn-light" value="Clear" />
+                            <input type="submit" class="btn btn-primary" value="Submit" />
+                        </div>
+                        <div id="modalPostItMsg" class="mb-3">
+                            <label class="text-success">New post was successfully added.</label>
+                        </div>
+                        
+                    </form>
+                    <div id="modalPostIts" class="mt-3 flex-row">
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <section id="startmenu" class="startmenu">
+            <section class="startmenu-power">
+                <section>
+                    <a id="btnStart" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_hamburger.jpg"></div>
+                        <div id="lblStart"><label>START</label></div>
+                    </a> 
+                </section>
+                <section>
+                    <a id="btnUser" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_lynng.png"></div>
+                        <div id="lblUser"><label>Lynn G</label></div>
+                    </a>  
+                    <a id="btnDocuments" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_documents.png"></div>
+                        <div id="lblDocuments"><label>Documents</label></div>
+                    </a>  
+                    <a id="btnPictures" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_pictures.png"></div>
+                        <div id="lblPictures"><label>Pictures</label></div>
+                    </a>    
+                    <a id="btnSettings" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_settings.png"></div>
+                        <div id="lblSettings"><label>Settings</label></div>
+                    </a>      
+                    <a id="btnPower" class="startmenu__item" href="#">
+                        <div><img class="img" src="./images/icon_power.png"></div>
+                        <div id="lblPower"><label>Power</label></div>
+                    </a>     
+                </section>
+            </section>
+            <section class="startmenu-apps">
+                <label>A</label>
+                <a class="startmenu__item" href="#">
+                    <div><img class="img" src="./images/icon_folder.png"></div>
+                    <div><label>A Empty</label></div>
+                </a>   
+                <label>B</label>
+                <a class="startmenu__item" href="#">
+                    <div><img class="img" src="./images/icon_folder.png"></div>
+                    <div><label>B Empty</label></div>
+                </a>   
+                <label>C</label>
+                <a id="menu-Contact" class="startmenu__item btn-app" href="#">
+                    <div><img class="img img--height-small" src="./images/icon_contacts_big.jpg"></div>
+                    <div><label>Contacts</label></div>
+                </a> 
+                <label>M</label>
+                <a class="startmenu__item" href="#">
+                    <div><img class="img" src="./images/icon_folder.png"></div>
+                    <div><label>M Empty</label></div>
+                </a>   
+                <a class="startmenu__item" href="#">
+                    <div><img class="img" src="./images/icon_folder.png"></div>
+                    <div><label>M Empty</label></div>
+                </a>    
+                <a class="startmenu__item" href="#">
+                    <div><img class="img" src="./images/icon_folder.png"></div>
+                    <div><label>M Empty</label></div>
+                </a>         
+                <label>P</label>
+                <a id="menu-Photo" class="startmenu__item btn-app" href="#">
+                    <div><img class="img img--height-small" src="./images/icon_photos_big.jpg"></div>
+                    <div><label>Photos</label></div>
+                </a>
+                <a id="menu-PostIt" class="startmenu__item btn-app" href="#">
+                    <div><img class="img img--height-small" src="./images/icon_notes_big.jpg"></div>
+                    <div><label>Post Its</label></div>
+                </a>   
+            </section>
+        </section>
+        <section class="taskbar">
+            <section class="taskbar__section-left">
+                <div class="taskbar__item-col">
+                    <a href="#"><img id="iconWin10" class="img" src="./images/icon_win10.jpg"></a>
+                </div>
+                <div class="taskbar__item-row">
+                    <img class="img" src="./images/icon_search.jpg"><input class="taskbar__input--height taskbar__input--no-border" type="text" placeholder="Type here to search">
+                </div>
+            </section>
+            <section class="taskbar__section-right">
+                <div class="datetime">
+                    <label>Time</label>
+                    <label>Date</label>
+                </div>
+                <img id="notify" class="img" src="./images/icon_notify.jpg">
+            </section>
+        </section>
+        <section class="date-display">
+            <label id="dateLabel">this is the date</label>
+        </section>
+        <section class="notification">
+            <label>No new notifications</label>
+        </section>  
+    </footer>
+    
+</body>
+</html>

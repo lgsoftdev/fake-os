@@ -1,0 +1,75 @@
+.body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url('/images/wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: $font_family;
+
+    @include flex_style(column, space-between);
+}
+
+.desktop-icons {
+    width: 80px;
+    margin: 20px;
+    font-size: small;
+    @include grid_style(auto auto, auto, 40px, 40px);
+}
+
+.btn-app {
+    @include flex_style(column, center, center);
+}
+
+a {
+    color: white;
+
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.img {
+    margin: 10px;
+}
+
+.img--height-xsmall {
+    height: 20px;
+}
+
+.img--height-small {
+    height: 25px;
+}
+
+.img--height-medium {
+    height: 50px;
+}
+
+.img--margin-left-none {
+    margin-left: 0;
+}
+
+.flex-row {
+    @include flex_style(row, start, '', wrap);
+}
+
+.flex-column{
+    @include flex_style(column)
+}
+
+.dropdown--margin-small {
+    margin-left: $margin_small;
+}
+
+.border-none {
+    border: none;
+}
+
+.footer {
+    @include flex_style(column, space-between);
+}
+
+
+

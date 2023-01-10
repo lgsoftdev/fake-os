@@ -1,0 +1,45 @@
+.taskbar {
+    height: auto;
+    background-color: $background_taskbar;
+    @include flex_style(row, space-between);
+    z-index: 3;
+
+    &__section-left {
+        @include flex_style(row, start);
+    }
+
+    &__section-right {
+        @include flex_style(row, end);
+    }
+
+    &__item-col {
+        @include flex_style(column, center);
+    }
+
+    &__item-row {
+        background-color: white;
+        @include flex_style(row, center, center);
+    }
+
+    &__input--height {
+        height: $height_taskbar;
+    }
+
+    &__input--no-border{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-bottom-style: hidden;
+    border-left-style: hidden;
+
+        &:focus{
+            outline:none;
+        }
+    }
+}
+
+.datetime {
+    @include flex_style(column, center, end);
+    color:white;
+    font-size: smaller;
+    margin-right: $margin_small;
+}

@@ -1,0 +1,74 @@
+/* The Modal (background) */
+.fakeosmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place; If absolute is used, vertical and horizontal bars appear*/
+    z-index: 1; /* Sit on top */
+    left: 100px; /* Location of the box */
+    top: 60px;
+    width: 80%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */ 
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    background-color: transparent; /* Fallback color */
+
+    // various width sizes for the modals
+    &--medium {
+        width: 65%;
+    }
+
+    &--small {
+        width: 380px;
+    }
+
+    /* Modal Content */
+    &__content {
+        z-index: 12;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 70%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    &__header {
+        padding: 2px 16px;
+        border-radius: 10px 10px 0 0;
+        background-color:darkseagreen;
+        color: white;
+        @include flex_style(row, space-between);
+
+        &--justify-start {
+            @include flex_style(row, start, center);
+        }
+    }
+    
+    &__body-flex {
+        @include flex_style();
+        padding: 0px 0px $margin_large 0px;
+    }
+
+    &__footer {
+        @include flex_style(row, end);
+        border-top: 1px solid lightgrey;
+        margin-top: $margin_small;
+        padding: $margin_small;
+    }
+}
+  
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
